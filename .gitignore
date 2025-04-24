@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+
+# Django
+*.pyc
+__pycache__/
+
+# SQLite Database
+db.sqlite3
+
+# IDEs
+.vscode/
+.idea/
