@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
+# from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 
 from django.contrib.auth import authenticate
 
@@ -52,6 +54,13 @@ class HealthProgramCreateView(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
+class HealthProgramListView(generics.ListAPIView):
+    queryset = HealthProgram.objects.all()
+    serializer_class = HealthProgramSerializer
+    permission_classes = [IsAuthenticated]
+
+
+
 # Client Views
 class ClientCreateView(generics.CreateAPIView):
     queryset = Client.objects.all()
@@ -62,6 +71,8 @@ class ClientListView(generics.ListAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name', 'email', 'phone']
 
 class ClientDetailView(generics.RetrieveAPIView):
     queryset = Client.objects.all()

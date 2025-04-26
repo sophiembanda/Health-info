@@ -29,15 +29,19 @@ class HealthProgramSerializer(serializers.ModelSerializer):
     class Meta:
         model = HealthProgram
         fields = '__all__'
-
-# Client
-class ClientSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Client
-        fields = '__all__'
+        read_only_fields = ['created_by', 'created_at']
 
 # Enrollment
 class EnrollmentSerializer(serializers.ModelSerializer):
+    program_name = serializers.CharField(source='program.name', read_only=True)
     class Meta:
         model = Enrollment
-        fields = '__all__'
+        fields = ['id', 'program', 'enrollment_date', 'program_name']
+
+# Client
+class ClientSerializer(serializers.ModelSerializer):
+    enrollments = EnrollmentSerializer(many=True, read_only=True)
+    class Meta:
+        model = Client
+        fields = ['id', 'name', 'date_of_birth', 'gender', 'email', 'phone', 'enrollments']
+
