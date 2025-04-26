@@ -1,0 +1,41 @@
+.client-profile {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .client-profile h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .client-profile p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .client-profile .programs {
+    margin-top: 20px;
+  }
+  
+  .client-profile .programs ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .client-profile .programs li {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .client-profile .programs li:hover {
+    background-color: #0056b3;
+  }
+  

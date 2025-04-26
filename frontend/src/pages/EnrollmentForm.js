@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import '../styles/EnrollmentForm.css';
+
 
 const EnrollmentForm = () => {
   const { id } = useParams();  // Get the client ID from the URL

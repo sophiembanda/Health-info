@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../styles/ClientProfile.css";  // Import CSS for styling
 
 const ClientProfile = () => {
   const { id } = useParams();  // Get the client ID from the URL
