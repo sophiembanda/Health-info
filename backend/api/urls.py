@@ -3,7 +3,7 @@ from .views import (
     SignupView, LoginView, LogoutView,
     HealthProgramCreateView,
     ClientCreateView, ClientListView, ClientDetailView,
-    EnrollmentCreateView,HealthProgramListView
+    EnrollmentCreateView,HealthProgramListView,EnrollmentDeleteView
 )
 
 urlpatterns = [
@@ -17,4 +17,12 @@ urlpatterns = [
     path('clients/', ClientListView.as_view(), name='list-clients'),
     path('clients/<int:pk>/', ClientDetailView.as_view(), name='client-detail'),
     path('enrollments/create/', EnrollmentCreateView.as_view(), name='create-enrollment'),
+    path('enrollments/remove/<int:client_id>/<int:program_id>/', EnrollmentDeleteView.as_view(), name='remove-enrollment'),
+
+
+    # path('programs/', HealthProgramCreateView.as_view(), name='create-program'),
+    # path('clients/register/', ClientCreateView.as_view(), name='register-client'),
+    # path('clients/', ClientListView.as_view(), name='list-clients'),
+    # path('clients/<int:pk>/', ClientDetailView.as_view(), name='client-detail'),
+    # path('enrollments/', EnrollmentCreateView.as_view(), name='create-enrollment'),
 ]

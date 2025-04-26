@@ -29,5 +29,9 @@ class Enrollment(models.Model):
     program = models.ForeignKey(HealthProgram, on_delete=models.CASCADE, related_name='enrollments')
     enrollment_date = models.DateField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ['client', 'program']
+
     def __str__(self):
         return f"{self.client.name} - {self.program.name}"
+

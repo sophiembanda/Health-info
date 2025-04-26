@@ -1,41 +1,134 @@
-.client-profile {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .client-profile h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .client-profile p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
-  
-  .client-profile .programs {
-    margin-top: 20px;
-  }
-  
-  .client-profile .programs ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .client-profile .programs li {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  
-  .client-profile .programs li:hover {
-    background-color: #0056b3;
-  }
-  
+.client-profile-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.client-profile-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.client-profile-info {
+  margin-bottom: 25px;
+}
+
+.client-profile-field {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.client-profile-subtitle {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #007bff;
+}
+
+.client-profile-program-list {
+  list-style: none;
+  padding: 0;
+}
+
+.client-profile-program-item {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.client-profile-program-item:hover {
+  background-color: #0056b3;
+}
+
+.client-profile-no-programs {
+  font-style: italic;
+  color: #666;
+}
+
+.client-profile-loading {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+}
+
+/* Add these styles to your existing ClientProfile.css */
+
+.program-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.program-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.program-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.program-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.program-description {
+  color: #555;
+  margin-top: 5px;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.remove-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.action-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}

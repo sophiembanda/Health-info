@@ -40,8 +40,18 @@ class EnrollmentSerializer(serializers.ModelSerializer):
 
 # Client
 class ClientSerializer(serializers.ModelSerializer):
-    enrollments = EnrollmentSerializer(many=True, read_only=True)
+    # enrollments = EnrollmentSerializer(many=True, read_only=True)
+    # class Meta:
+    #     model = Client
+    #     fields = ['id', 'name', 'date_of_birth', 'gender', 'email', 'phone', 'enrollments']
+
+    enrollments = serializers.SerializerMethodField()
+    
     class Meta:
         model = Client
         fields = ['id', 'name', 'date_of_birth', 'gender', 'email', 'phone', 'enrollments']
+    
+    def get_enrollments(self, obj):
+        enrollments = obj.enrollments.all()
+        return [{'id': e.id, 'program': {'id': e.program.id, 'name': e.program.name}} for e in enrollments]
 
